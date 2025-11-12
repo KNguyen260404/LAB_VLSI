@@ -1,0 +1,31 @@
+# Yosys synthesis script for decoder3_to_8 with SkyWater 130nm PDK
+# Read Verilog source file
+read_verilog ../src/decoder3_to_8.v
+
+# Set top module
+hierarchy -top decoder3_to_8
+
+# Run high-level synthesis passes
+proc; opt; memory; opt; fsm; opt
+
+# Technology mapping for SkyWater 130nm
+# Use ABC for technology mapping with SkyWater standard cells
+techmap; opt
+
+# Map to SkyWater 130nm standard cells using ABC
+abc -liberty /usr/local/share/pdk/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+# Clean up
+opt_clean
+
+# Show final statistics
+stat -liberty /usr/local/share/pdk/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+# Write synthesized netlist
+write_verilog -noattr decoder3_to_8_sky130.v
+
+# Write JSON format
+write_json decoder3_to_8_sky130.json
+
+# Generate graphical representation
+show -colors 1 -width -format dot -prefix decoder3_to_8_sky130_graph

@@ -1,0 +1,19 @@
+# Yosys synthesis script for decoder3_to_8
+# Read Verilog source file
+read_verilog ../src/decoder3_to_8.v
+
+# Set top module
+hierarchy -top decoder3_to_8
+
+# Run synthesis passes
+proc; opt; memory; opt; fsm; opt; techmap; opt
+
+# Show statistics
+stat
+
+# Write synthesized netlist to different formats
+write_verilog decoder3_to_8_synth.v
+write_json decoder3_to_8_synth.json
+
+# Generate graphical representation
+show -colors 1 -width -format dot -prefix decoder3_to_8_graph

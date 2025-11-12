@@ -1,0 +1,506 @@
+{
+  "creator": "Yosys 0.50+56 (git sha1 176131b50, clang++ 18.1.3 -fPIC -O3)",
+  "modules": {
+    "decoder3_to_8": {
+      "attributes": {
+        "top": "00000000000000000000000000000001",
+        "src": "../src/decoder3_to_8.v:1.1-28.10"
+      },
+      "ports": {
+        "in": {
+          "direction": "input",
+          "bits": [ 2, 3, 4 ]
+        },
+        "out": {
+          "direction": "output",
+          "bits": [ 5, 6, 7, 8, 9, 10, 11, 12 ]
+        },
+        "en": {
+          "direction": "input",
+          "bits": [ 13 ]
+        }
+      },
+      "cells": {
+        "$auto$simplemap.cc:267:simplemap_mux$116": {
+          "hide_name": 1,
+          "type": "$_MUX_",
+          "parameters": {
+          },
+          "attributes": {
+            "src": ""
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 14 ],
+            "B": [ "0" ],
+            "S": [ 3 ],
+            "Y": [ 15 ]
+          }
+        },
+        "$auto$simplemap.cc:267:simplemap_mux$118": {
+          "hide_name": 1,
+          "type": "$_MUX_",
+          "parameters": {
+          },
+          "attributes": {
+            "src": ""
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0" ],
+            "B": [ 14 ],
+            "S": [ 3 ],
+            "Y": [ 16 ]
+          }
+        },
+        "$auto$simplemap.cc:267:simplemap_mux$121": {
+          "hide_name": 1,
+          "type": "$_MUX_",
+          "parameters": {
+          },
+          "attributes": {
+            "src": ""
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 17 ],
+            "B": [ "0" ],
+            "S": [ 4 ],
+            "Y": [ 18 ]
+          }
+        },
+        "$auto$simplemap.cc:267:simplemap_mux$122": {
+          "hide_name": 1,
+          "type": "$_MUX_",
+          "parameters": {
+          },
+          "attributes": {
+            "src": ""
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 16 ],
+            "B": [ "0" ],
+            "S": [ 4 ],
+            "Y": [ 19 ]
+          }
+        },
+        "$auto$simplemap.cc:267:simplemap_mux$123": {
+          "hide_name": 1,
+          "type": "$_MUX_",
+          "parameters": {
+          },
+          "attributes": {
+            "src": ""
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 20 ],
+            "B": [ "0" ],
+            "S": [ 4 ],
+            "Y": [ 21 ]
+          }
+        },
+        "$auto$simplemap.cc:267:simplemap_mux$124": {
+          "hide_name": 1,
+          "type": "$_MUX_",
+          "parameters": {
+          },
+          "attributes": {
+            "src": ""
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0" ],
+            "B": [ 15 ],
+            "S": [ 4 ],
+            "Y": [ 22 ]
+          }
+        },
+        "$auto$simplemap.cc:267:simplemap_mux$125": {
+          "hide_name": 1,
+          "type": "$_MUX_",
+          "parameters": {
+          },
+          "attributes": {
+            "src": ""
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0" ],
+            "B": [ 17 ],
+            "S": [ 4 ],
+            "Y": [ 23 ]
+          }
+        },
+        "$auto$simplemap.cc:267:simplemap_mux$126": {
+          "hide_name": 1,
+          "type": "$_MUX_",
+          "parameters": {
+          },
+          "attributes": {
+            "src": ""
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0" ],
+            "B": [ 16 ],
+            "S": [ 4 ],
+            "Y": [ 24 ]
+          }
+        },
+        "$auto$simplemap.cc:267:simplemap_mux$127": {
+          "hide_name": 1,
+          "type": "$_MUX_",
+          "parameters": {
+          },
+          "attributes": {
+            "src": ""
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0" ],
+            "B": [ 20 ],
+            "S": [ 4 ],
+            "Y": [ 25 ]
+          }
+        },
+        "$auto$simplemap.cc:267:simplemap_mux$128": {
+          "hide_name": 1,
+          "type": "$_MUX_",
+          "parameters": {
+          },
+          "attributes": {
+            "src": ""
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 15 ],
+            "B": [ "0" ],
+            "S": [ 4 ],
+            "Y": [ 26 ]
+          }
+        },
+        "$auto$simplemap.cc:267:simplemap_mux$129": {
+          "hide_name": 1,
+          "type": "$_MUX_",
+          "parameters": {
+          },
+          "attributes": {
+            "src": ""
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 2 ],
+            "B": [ "0" ],
+            "S": [ 3 ],
+            "Y": [ 17 ]
+          }
+        },
+        "$auto$simplemap.cc:267:simplemap_mux$131": {
+          "hide_name": 1,
+          "type": "$_MUX_",
+          "parameters": {
+          },
+          "attributes": {
+            "src": ""
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0" ],
+            "B": [ 2 ],
+            "S": [ 3 ],
+            "Y": [ 20 ]
+          }
+        },
+        "$auto$simplemap.cc:267:simplemap_mux$137": {
+          "hide_name": 1,
+          "type": "$_MUX_",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "../src/decoder3_to_8.v:10.11-10.13|../src/decoder3_to_8.v:10.7-26.10"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0" ],
+            "B": [ 26 ],
+            "S": [ 13 ],
+            "Y": [ 5 ]
+          }
+        },
+        "$auto$simplemap.cc:267:simplemap_mux$138": {
+          "hide_name": 1,
+          "type": "$_MUX_",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "../src/decoder3_to_8.v:10.11-10.13|../src/decoder3_to_8.v:10.7-26.10"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0" ],
+            "B": [ 18 ],
+            "S": [ 13 ],
+            "Y": [ 6 ]
+          }
+        },
+        "$auto$simplemap.cc:267:simplemap_mux$139": {
+          "hide_name": 1,
+          "type": "$_MUX_",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "../src/decoder3_to_8.v:10.11-10.13|../src/decoder3_to_8.v:10.7-26.10"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0" ],
+            "B": [ 19 ],
+            "S": [ 13 ],
+            "Y": [ 7 ]
+          }
+        },
+        "$auto$simplemap.cc:267:simplemap_mux$140": {
+          "hide_name": 1,
+          "type": "$_MUX_",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "../src/decoder3_to_8.v:10.11-10.13|../src/decoder3_to_8.v:10.7-26.10"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0" ],
+            "B": [ 21 ],
+            "S": [ 13 ],
+            "Y": [ 8 ]
+          }
+        },
+        "$auto$simplemap.cc:267:simplemap_mux$141": {
+          "hide_name": 1,
+          "type": "$_MUX_",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "../src/decoder3_to_8.v:10.11-10.13|../src/decoder3_to_8.v:10.7-26.10"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0" ],
+            "B": [ 22 ],
+            "S": [ 13 ],
+            "Y": [ 9 ]
+          }
+        },
+        "$auto$simplemap.cc:267:simplemap_mux$142": {
+          "hide_name": 1,
+          "type": "$_MUX_",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "../src/decoder3_to_8.v:10.11-10.13|../src/decoder3_to_8.v:10.7-26.10"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0" ],
+            "B": [ 23 ],
+            "S": [ 13 ],
+            "Y": [ 10 ]
+          }
+        },
+        "$auto$simplemap.cc:267:simplemap_mux$143": {
+          "hide_name": 1,
+          "type": "$_MUX_",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "../src/decoder3_to_8.v:10.11-10.13|../src/decoder3_to_8.v:10.7-26.10"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0" ],
+            "B": [ 24 ],
+            "S": [ 13 ],
+            "Y": [ 11 ]
+          }
+        },
+        "$auto$simplemap.cc:267:simplemap_mux$144": {
+          "hide_name": 1,
+          "type": "$_MUX_",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "../src/decoder3_to_8.v:10.11-10.13|../src/decoder3_to_8.v:10.7-26.10"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0" ],
+            "B": [ 25 ],
+            "S": [ 13 ],
+            "Y": [ 12 ]
+          }
+        },
+        "$auto$simplemap.cc:267:simplemap_mux$154": {
+          "hide_name": 1,
+          "type": "$_NOT_",
+          "parameters": {
+          },
+          "attributes": {
+            "src": ""
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 2 ],
+            "Y": [ 14 ]
+          }
+        }
+      },
+      "netnames": {
+        "$2\\out[7:0]": {
+          "hide_name": 1,
+          "bits": [ 26, 18, 19, 21, 22, 23, 24, 25 ],
+          "attributes": {
+            "src": "../src/decoder3_to_8.v:7.2-27.4"
+          }
+        },
+        "$memory$auto$proc_rom.cc:155:do_switch$3$rdmux[0][0][0]$a$16": {
+          "hide_name": 1,
+          "bits": [ 17, 16, 20, "0", "0", "0", "0", 15 ],
+          "attributes": {
+          }
+        },
+        "$memory$auto$proc_rom.cc:155:do_switch$3$rdmux[0][1][0]$a$19": {
+          "hide_name": 1,
+          "bits": [ 2, "0", "0", "0", "0", "0", "0", 14 ],
+          "attributes": {
+          }
+        },
+        "en": {
+          "hide_name": 0,
+          "bits": [ 13 ],
+          "attributes": {
+            "src": "../src/decoder3_to_8.v:3.7-3.9"
+          }
+        },
+        "in": {
+          "hide_name": 0,
+          "bits": [ 2, 3, 4 ],
+          "attributes": {
+            "src": "../src/decoder3_to_8.v:2.14-2.16"
+          }
+        },
+        "out": {
+          "hide_name": 0,
+          "bits": [ 5, 6, 7, 8, 9, 10, 11, 12 ],
+          "attributes": {
+            "src": "../src/decoder3_to_8.v:4.14-4.17"
+          }
+        }
+      }
+    }
+  }
+}

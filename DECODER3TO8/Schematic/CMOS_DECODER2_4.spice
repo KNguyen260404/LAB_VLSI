@@ -1,0 +1,95 @@
+** sch_path: /home/nguyen2604/projects/DECODER3TO8/Schematic/CMOS_DECODER2_4.sch
+**.subckt CMOS_DECODER2_4
+x1 net1 net3 GND net2 Y3 Y2 Y1 Y0 DECODER2_TO_4
+V1 net1 GND 1.8
+V2 net2 GND PULSE(0 1.8 0 100p 100p 10n 20n)
+V3 net3 GND PULSE(0 1.8 0 100p 100p 20n 40n)
+**** begin user architecture code
+
+.lib /usr/local/share/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice tt
+.tran 100p 100n
+.save all
+.control
+    run
+    plot v(A1) v(A0)
+    plot v(Y0)
+    plot v(Y1)
+    plot v(Y2)
+    plot v(Y3)
+.endc
+
+
+**** end user architecture code
+**.ends
+
+* expanding   symbol:  /home/nguyen2604/projects/DECODER3TO8/Schematic/DECODER2_TO_4.sym # of pins=8
+** sym_path: /home/nguyen2604/projects/DECODER3TO8/Schematic/DECODER2_TO_4.sym
+** sch_path: /home/nguyen2604/projects/DECODER3TO8/Schematic/DECODER2_TO_4.sch
+.subckt DECODER2_TO_4 VDD A0 GND A1 Y3 Y2 Y1 Y0
+*.ipin A0
+*.ipin A1
+*.opin Y0
+*.opin Y1
+*.opin Y2
+*.opin Y3
+*.iopin VDD
+*.iopin GND
+x1 VDD A0 net2 GND INVERTER
+x2 VDD A1 net1 GND INVERTER
+x3 VDD net2 Y0 net1 GND AND
+x4 VDD A0 Y1 net1 GND AND
+x5 VDD net2 Y2 A1 GND AND
+x6 VDD A0 Y3 A1 GND AND
+.ends
+
+
+* expanding   symbol:  /home/nguyen2604/projects/DECODER3TO8/Schematic/INVERTER.sym # of pins=4
+** sym_path: /home/nguyen2604/projects/DECODER3TO8/Schematic/INVERTER.sym
+** sch_path: /home/nguyen2604/projects/DECODER3TO8/Schematic/INVERTER.sch
+.subckt INVERTER VDD IN OUT VSS
+*.ipin IN
+*.opin OUT
+*.iopin VDD
+*.iopin VSS
+XM2 OUT IN VDD VDD sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 ad=0.29 as=0.29 pd=2.58 ps=2.58 nrd=0.29 nrs=0.29 sa=0 sb=0 sd=0 mult=1
++ m=1
+XM1 OUT IN VSS VSS sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 ad=0.29 as=0.29 pd=2.58 ps=2.58 nrd=0.29 nrs=0.29 sa=0 sb=0 sd=0 mult=1
++ m=1
+.ends
+
+
+* expanding   symbol:  /home/nguyen2604/projects/DECODER3TO8/Schematic/AND.sym # of pins=5
+** sym_path: /home/nguyen2604/projects/DECODER3TO8/Schematic/AND.sym
+** sch_path: /home/nguyen2604/projects/DECODER3TO8/Schematic/AND.sch
+.subckt AND VDD A Y B GND
+*.ipin A
+*.ipin B
+*.opin Y
+*.iopin VDD
+*.iopin GND
+x1 VDD net1 A B GND NAND
+x2 VDD net1 Y GND INVERTER
+.ends
+
+
+* expanding   symbol:  /home/nguyen2604/projects/DECODER3TO8/Schematic/NAND.sym # of pins=5
+** sym_path: /home/nguyen2604/projects/DECODER3TO8/Schematic/NAND.sym
+** sch_path: /home/nguyen2604/projects/DECODER3TO8/Schematic/NAND.sch
+.subckt NAND VDD OUT IN1 IN2 VSS
+*.ipin IN1
+*.ipin IN2
+*.opin OUT
+*.iopin VDD
+*.iopin VSS
+XM1 OUT IN2 net1 VSS sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 ad=0.29 as=0.29 pd=2.58 ps=2.58 nrd=0.29 nrs=0.29 sa=0 sb=0 sd=0
++ mult=1 m=1
+XM2 net1 IN1 VSS VSS sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 ad=0.29 as=0.29 pd=2.58 ps=2.58 nrd=0.29 nrs=0.29 sa=0 sb=0 sd=0
++ mult=1 m=1
+XM3 OUT IN2 VDD VDD sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 ad=0.29 as=0.29 pd=2.58 ps=2.58 nrd=0.29 nrs=0.29 sa=0 sb=0 sd=0
++ mult=1 m=1
+XM4 OUT IN1 VDD VDD sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 ad=0.29 as=0.29 pd=2.58 ps=2.58 nrd=0.29 nrs=0.29 sa=0 sb=0 sd=0
++ mult=1 m=1
+.ends
+
+.GLOBAL GND
+.end

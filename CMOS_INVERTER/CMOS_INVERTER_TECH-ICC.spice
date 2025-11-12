@@ -1,0 +1,4 @@
+* SPICE3 file created from CMOS_INVERTER_TECH-ICC.ext - technology: sky130A
+
+X0 Y A VN VN sky130_fd_pr__nfet_01v8 ad=0.75 pd=3.7 as=0.75 ps=3.7 w=1.25 l=0.15
+X1 Y A VP VP sky130_fd_pr__pfet_01v8 ad=0.75 pd=3.7 as=0.75 ps=3.7 w=1.25 l=0.15
